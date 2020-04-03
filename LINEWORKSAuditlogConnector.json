@@ -1,0 +1,112 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "LINE WORKS 監査ログダウンロード",
+    "description": "LINE WORKS 監査 API で監査ログを取得するコネクタです"
+  },
+  "host": "jp1-audit.worksmobile.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/works/audit/log/message/logs.csv": {
+      "get": {
+        "summary": "LINE WORKS 監査ログ ダウンロード",
+        "description": "LINE WORKS 監査 API で監査ログを取得するコネクタです",
+        "operationId": "AuditLogDownload",
+        "parameters": [
+          {
+            "name": "apiId",
+            "default": "downCsvLog",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "serviceId",
+            "default": "audit",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "rangeName",
+            "default": "domain",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "_startDate",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "_endDate",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "_tenantId",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "_domainId",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "language",
+            "default": "ja-JP",
+            "in": "query",
+            "type": "string",
+            "required": true,
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "consumerKey",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "consumerKey"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API キー": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "security": [
+    {
+      "API キー": []
+    }
+  ],
+  "tags": []
+}
