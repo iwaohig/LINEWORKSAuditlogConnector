@@ -26,7 +26,8 @@
             "default": "downCsvLog",
             "in": "query",
             "type": "string",
-            "required": true
+            "required": true,
+            "x-ms-visibility": "internal"
           },
           {
             "name": "serviceId",
